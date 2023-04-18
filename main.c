@@ -20,7 +20,7 @@ int main (){
 		printf("Vvedite circle: ");
 		fgets(s, 127, stdin);
 
-		if ( strcmp(s, "circle(") == 0 ) {
+		//if ( strcmp(s, "circle(") == 0 ) {
 			arr[i][0] = atof(s + 7);
 
 			char* s1 = strstr(s, " ");
@@ -32,10 +32,10 @@ int main (){
 			printf("Circle added\n");
 
 			i++;
-		}
-		else {
-			printf("Wrong circle format!\n");
-		}
+		//}
+		//else {
+			//printf("Wrong circle format!\n");
+		//}
 	}
 
 	int j;
