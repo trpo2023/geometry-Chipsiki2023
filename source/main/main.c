@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "mylib.h"
+#include <mylib/mylib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
