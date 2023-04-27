@@ -10,7 +10,7 @@ main: source/main/main.c
 	$(CC) ./source/main/main.c -c -o ./obj/main/main.o $(CFLAGS)
 
 libmylib.a: mylib source/mylib/mylib.h
-	ar ./obj/libs/libmylib.a ./obj/mylib/mylib.o ./source/mylib/mylib.h -r -c -s
+	ar ./obj/libs/libmylib.a ./obj/mylib/mylib.o ./source/mylib/mylib.h rcs
 
 mylib: source/mylib/mylib.c
 	$(CC) ./source/mylib/mylib.c -c -o ./obj/mylib/mylib.o $(CFLAGS)
