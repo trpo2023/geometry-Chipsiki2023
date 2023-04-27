@@ -18,3 +18,4 @@ int readCircle(float* circle) {
 void printCircle(float* circle) {
 	printf("circle(%f %f, %f)\n", circle[0], circle[1], circle[2]);
 }
+

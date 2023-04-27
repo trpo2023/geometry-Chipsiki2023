@@ -1,13 +1,22 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -MMD -I "source"
+
 all: exe
 
-exe: main.o libmylib.a
-	gcc main.o -L. -lmylib -o exe
+exe: main libmylib.a
+	$(CC) obj/main/main.o -Lobj/libs -lmylib -o bin/exe $(CFLAGS)
 
-main.o: main.c
-	gcc main.c -c -o main.o
+main: source/main/main.c
+	$(CC) source/main/main.c -c -o obj/main/main.o $(CFLAGS)
 
-libmylib.a: mylib.c mylib.h
-	ar rsc libmylib.a mylib.c mylib.h
+libmylib.a: mylib source/mylib/mylib.h
+	ar rcs obj/libs/libmylib.a obj/mylib/mylib.o source/mylib/mylib.h
+
+mylib: source/mylib/mylib.c
+	$(CC) source/mylib/mylib.c -c -o obj/mylib/mylib.o $(CFLAGS)
+
+clean:
+	rm obj/main/main.o obj/libs/libmylib.a obj.mylib/mylib.o bin/exe
 
 -include main.d mylib.d
 

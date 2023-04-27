@@ -9,3 +9,4 @@ int readCircle(float* circle);
 void printCircle();
 
 #endif
+
